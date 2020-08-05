@@ -119,4 +119,54 @@ main()
 		printf("                 |                |    \n ") ;
 		printf("        %d       |     %d          |   %d",p1,p2,t);
       }
-    
+    }
+  void board()//Fuction for the layout of the board
+{
+    system("cls");
+    printf("\n\n\t                   TIC TAC TOE\n\n");
+    printf("                      Player 1(X)   -  Player 2(O)\n\n\n");
+     printf("                             |     |     \n");
+    printf("                          %c  |  %c  |  %c \n", box[1], box[2], box[3]);
+     printf("                        _____|_____|_____\n");
+     printf("                             |     |     \n");
+    printf("                          %c  |  %c  |  %c \n", box[4], box[5], box[6]);
+     printf("                        _____|_____|_____\n");
+     printf("                             |     |     \n");
+    printf("                          %c  |  %c  |  %c \n", box[7], box[8], box[9]);
+     printf("                             |     |     \n\n");
+
+}    
+int wincondition()//Fuction to check win condition
+{    if (box[1] == box[2] && box[2] == box[3])
+        return 1;
+        
+    else if (box[4] == box[5] && box[5] == box[6])
+        return 1;
+        
+    else if (box[7] == box[8] && box[8] == box[9])
+        return 1;
+        
+    else if (box[1] == box[4] && box[4] == box[7])
+        return 1;
+        
+    else if (box[2] == box[5] && box[5] == box[8])
+        return 1;
+        
+    else if (box[3] == box[6] && box[6] == box[9])
+        return 1;
+        
+    else if (box[1] == box[5] && box[5] == box[9])
+        return 1;
+        
+    else if (box[3] == box[5] && box[5] == box[7])
+        return 1;
+	      
+    else if (box[1]!= '1' && box[2] != '2' && box[3] != '3' && box[4] != '4' && box[5] != '5' && box[6] != '6' && box[7]!= '7' && box[8] != '8' && box[9] != '9')
+          {
+		   return 0;
+	     }
+    else
+        return  - 1;
+}
+
+
